@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset ="UTF-8">
+	<meta http-equiv ="X-UA-Compatible" content ="IE=edge">
+	<title>EditableCombobox</title>
+</head>
+<body>
+<script>
+function createDataList(){
+        //Set Combobox Item to below array
+	var values =['hamburger' , 'cheeseburger' , 'cheesedoubleburger','Fishburger', 'Teriyakiburger'];
+
+	var dataList =document.createElement('datalist');
+	dataList.id ="dept_list";
+	
+	values.forEach(value =>{
+		var option = document.createElement('Option');
+		option.innerHTML = value;
+		option.value = value;
+		dataList.appendChild(option);
+	})
+	document.body.appendChild(dataList);
+}
+
+createDataList();
+</script>
+	<label>Mc</label>
+	<input type ="text" id="dept" list="dept_list">
+</body>
+</html>
